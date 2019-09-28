@@ -54,23 +54,21 @@ if (m1 * n1 * m2 * n2 != 0):
     b.save(filename)
     #Создание графика
     f = plt.figure()
-    f1 = f.add_subplot(4,1,1)
+    f1 = f.add_subplot(2,2,1)
     f1.plot(mtr1.sum(axis=0),"-b")
     f1.plot(mtr1.sum(axis=0),"ro")
 
-    f2 = f.add_subplot(4,1,2)
+    f2 = f.add_subplot(2,2,2)
     f2.plot(mtr2.sum(axis=0), "-g")
     f2.plot(mtr2.sum(axis=0), "ro")
     if k==1:
-        f3 = f.add_subplot(4, 1, 3)
+        f3 = f.add_subplot(2, 2, 3)
         f3.plot(mtr3.sum(axis=0), "-y")
         f3.plot(mtr3.sum(axis=0), "ro")
     if r==1:
-        f4 = f.add_subplot(4, 1, 4)
+        f4 = f.add_subplot(2, 2, 4)
         f4.plot(mtr4.sum(axis=0), "-o")
         f4.plot(mtr4.sum(axis=0), "ro")
-        #plt.bar(np.arange())
-    plt.show()
-
+    plt.savefig("pic",fmt='png')
 else:
     print("Невозможно создать одну из матриц")
